@@ -30,6 +30,7 @@ def temperature_methods():
         # insert data into database
         query = f"insert into sensorsLog(location, sensor, value) values(\"{loc}\", \"{sen}\", {value});"
         db.execute_query(query)
+        print(query)
 
         # return some response to the client
         return response.create_response("Temperature value is added successfully")
@@ -68,4 +69,4 @@ def ldr_methods():
 
 
 # run server
-server.run(host="0.0.0.0", port=3000, debug=True)
+server.run(host="0.0.0.0", port=4000, debug=True)
